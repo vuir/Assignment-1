@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor Lyborm - Web Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio of ">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Home">TL</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About me</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name">
+                        test<br>
+                        test
+                    </h1>
+                    <div class="hero-title">
+                        <h2>Computer Science</h2>
+                        <div class="title-underline"></div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="scroll-indicator" aria-label="Scroll to recent works">
+                            <span>↓ Recent Projects</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/profile.jpg" alt="Fake Profile Picture - Professional Portrait" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">My History</span>
+                <h2 class="section-title">About me</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello, I am</h3>
+                    <p>A passionate web developer with over 5 years of experience creating beautiful, functional, and user-centered digital experiences. I specialize in modern web technologies and love turning complex problems into simple, elegant solutions.</p>
+                    <p>My journey in web development began with a curiosity about how websites work, and it has evolved into a career dedicated to crafting exceptional digital experiences that make a difference.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">05</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">29+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">07</span>
+                            <span class="stat-label">Best Work Awards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <img src="assets/images/about-portrait.jpg" alt="Tailor Lyborm working on laptop" class="about-portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item" data-skill="html">
+                    <div class="skill-icon">
+                        <img src="assets/icons/html5.svg" alt="HTML5" class="icon-img">
+                    </div>
+                    <span class="skill-label">HTML</span>
+                </div>
+
+                <div class="skill-item" data-skill="css">
+                    <div class="skill-icon">
+                        <img src="assets/icons/css3.svg" alt="CSS3" class="icon-img">
+                    </div>
+                    <span class="skill-label">CSS</span>
+                </div>
+
+                <div class="skill-item" data-skill="javascript">
+                    <div class="skill-icon">
+                        <img src="assets/icons/javascript.svg" alt="JavaScript" class="icon-img">
+                    </div>
+                    <span class="skill-label">JavaScript</span>
+                </div>
+
+                <div class="skill-item" data-skill="react">
+                    <div class="skill-icon">
+                        <img src="assets/icons/react.svg" alt="React" class="icon-img">
+                    </div>
+                    <span class="skill-label">React</span>
+                </div>
+
+                <div class="skill-item" data-skill="git">
+                    <div class="skill-icon">
+                        <img src="assets/icons/git.svg" alt="Git" class="icon-img">
+                    </div>
+                    <span class="skill-label">Git</span>
+                </div>
+
+                <div class="skill-item" data-skill="github">
+                    <div class="skill-icon">
+                        <img src="assets/icons/github.svg" alt="GitHub" class="icon-img">
+                    </div>
+                    <span class="skill-label">GitHub</span>
+                </div>
+
+                <div class="skill-item" data-skill="tailwind">
+                    <div class="skill-icon">
+                        <img src="assets/icons/tailwind.svg" alt="Tailwind CSS" class="icon-img">
+                    </div>
+                    <span class="skill-label">Tailwind CSS</span>
+                </div>
+
+                <div class="skill-item" data-skill="sass">
+                    <div class="skill-icon">
+                        <img src="assets/icons/sass.svg" alt="Sass" class="icon-img">
+                    </div>
+                    <span class="skill-label">Sass</span>
+                </div>
+
+                <div class="skill-item" data-skill="figma">
+                    <div class="skill-icon">
+                        <img src="assets/icons/figma.svg" alt="Figma" class="icon-img">
+                    </div>
+                    <span class="skill-label">Figma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">RECENT WORKS</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/restaurant-website.jpg" alt="Restaurant Website Preview" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Restaurant Website</h3>
+                        <p class="project-description">A modern, responsive website for a fine dining restaurant featuring an elegant design and smooth user experience.</p>
+                        <div class="project-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/ecommerce-app.jpg" alt="E-commerce App Preview" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce App</h3>
+                        <p class="project-description">A full-featured e-commerce application with shopping cart, user authentication, and payment integration.</p>
+                        <div class="project-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/portfolio-site.jpg" alt="Portfolio Website Preview" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">A clean, modern portfolio website showcasing creative work with smooth animations and responsive design.</p>
+                        <div class="project-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CONTACT ME</h2>
+            </div>
+
+            <div class="contact-content">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required minlength="2" aria-describedby="name-error">
+                        <span class="error-message" id="name-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
+                        <span class="error-message" id="email-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" required minlength="5" aria-describedby="message-error"></textarea>
+                        <span class="error-message" id="message-error" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+
+                    <div class="form-status" id="form-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" aria-label="Home">TL</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; <span id="current-year"></span> Tailor Lyborm. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

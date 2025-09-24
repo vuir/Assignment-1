@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f7fafc"/>
+  <rect x="50" y="50" width="300" height="200" rx="8" fill="#5B8CFF"/>
+  <circle cx="200" cy="120" r="30" fill="#FFFFFF"/>
+  <rect x="185" y="150" width="30" height="40" rx="15" fill="#FFFFFF"/>
+  <rect x="100" y="200" width="200" height="40" rx="20" fill="#1a1f36"/>
+  <text x="200" y="225" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Working on Code</text>
+</svg>
