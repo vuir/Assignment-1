@@ -366,7 +366,6 @@ button {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-dark);
-  border-radius: var(--border-radius-md);
   overflow: hidden;
   border: 2px solid transparent;
   transition: all var(--transition-normal);
@@ -458,9 +457,6 @@ button {
   margin-bottom: var(--spacing-lg);
 }
 
-.project-card:hover .project-arrow {
-  transform: translateX(5px);
-}
 
 /* ===========================
    Contact Section
@@ -595,11 +591,6 @@ button {
   color: var(--accent-kindawhite);
 }
 
-.footer-text {
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
-}
-
 .footer-links {
   display: flex;
   gap: var(--spacing-lg);
@@ -613,6 +604,28 @@ button {
 
 .footer-link:hover {
   color: var(--accent-kindawhite);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.greeting-message {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 400;
+}
+
+.copyright {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  opacity: 0.8;
+  text-align: center;
 }
 
 /* ===========================
@@ -702,19 +715,6 @@ button {
     gap: var(--spacing-2xl);
   }
 
-  .about-text {
-    order: 2;
-  }
-
-  .about-image {
-    order: 1;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-  }
-
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
@@ -728,6 +728,11 @@ button {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .greeting-message {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
   }
 }
 
@@ -752,19 +757,6 @@ button {
     height: 180px;
   }
 
-  .about-portrait {
-    max-width: 300px;
-    height: 250px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .stat-number {
-    font-size: var(--font-size-4xl);
-  }
 
   .skills-grid {
     grid-template-columns: 1fr;
@@ -777,5 +769,15 @@ button {
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .greeting-message {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+
+  .footer-bottom {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
   }
 }

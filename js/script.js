@@ -13,6 +13,7 @@
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const currentYear = document.getElementById('current-year');
+    const greetingMessage = document.getElementById('greeting-message');
 
     // State
     let isMenuOpen = false;
@@ -45,20 +46,6 @@
         return rect.top + window.pageYOffset;
     }
 
-    /**
-     * Check if element is in viewport
-     */
-    function isInViewport(element, threshold = 0.3) {
-        const rect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        const elementTop = rect.top;
-        const elementBottom = rect.bottom;
-
-        return (
-            elementTop <= windowHeight * (1 - threshold) &&
-            elementBottom >= windowHeight * threshold
-        );
-    }
 
     // ===========================
     // Navigation Functions
@@ -369,6 +356,28 @@
     // ===========================
 
     /**
+     * Update greeting message based on time of day
+     */
+    function updateGreetingMessage() {
+        const hour = new Date().getHours();
+        let greeting;
+
+        if (hour >= 5 && hour < 12) {
+            greeting = "Good morning! ☀️ Thank you for visiting my portfolio.";
+        } else if (hour >= 12 && hour < 17) {
+            greeting = "Good afternoon! 🌤️ Thank you for visiting my portfolio.";
+        } else if (hour >= 17 && hour < 21) {
+            greeting = "Good evening! 🌆 Thank you for visiting my portfolio.";
+        } else {
+            greeting = "Good night! 🌙 Thank you for visiting my portfolio.";
+        }
+
+        if (greetingMessage) {
+            greetingMessage.textContent = greeting;
+        }
+    }
+
+    /**
      * Update footer year
      */
     function updateFooterYear() {
@@ -437,6 +446,9 @@
      * Initialize the application
      */
     function init() {
+        // Update greeting message based on time of day
+        updateGreetingMessage();
+
         // Update footer year
         updateFooterYear();
 
