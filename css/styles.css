@@ -3,9 +3,9 @@
    =========================== */
 :root {
   /* Colors */
-  --primary-navy: #111a17;
+  --primary-green: #111a17;
   --primary-dark: #273631;
-  --accent-blue: #71857b;
+  --accent-blue: #9ea5a1;
   --text-primary: #ffffff;
   --text-secondary: #cbcdcf;
   --text-muted: #d8dbd8;
@@ -239,7 +239,7 @@ button {
    =========================== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
   display: flex;
   align-items: center;
   padding-top: var(--navbar-height);
@@ -339,7 +339,7 @@ button {
    Skills Section
    =========================== */
 .skills {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -543,7 +543,7 @@ button {
    Contact Section
    =========================== */
 .contact {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
   padding: var(--spacing-4xl) 0;
 }
 
