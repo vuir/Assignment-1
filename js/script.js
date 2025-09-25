@@ -5,19 +5,19 @@
 (function() {
     'use strict';
 
-    // DOM Elements
-    const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    const currentYear = document.getElementById('current-year');
-    const greetingMessage = document.getElementById('greeting-message');
+    // DOM Elements - References to key HTML elements used throughout the application
+    const navbar = document.getElementById('navbar'); // Main navigation bar
+    const navToggle = document.getElementById('nav-toggle'); // Mobile menu toggle button (hamburger icon)
+    const navMenu = document.getElementById('nav-menu'); // Desktop navigation menu (hidden on mobile)
+    const navLinks = document.querySelectorAll('.nav-link'); // All navigation links for section navigation
+    const contactForm = document.getElementById('contact-form'); // Contact form for user inquiries
+    const formStatus = document.getElementById('form-status'); // Element to display form submission status
+    const currentYear = document.getElementById('current-year'); // Element to display current year in copyright
+    const greetingMessage = document.getElementById('greeting-message'); // Personalized greeting message in footer
 
-    // State
-    let isMenuOpen = false;
-    let currentSection = 'home';
+    // Application State - Variables that track the current state of the UI
+    let isMenuOpen = false; // Tracks whether mobile menu is currently open
+    let currentSection = 'home'; // Tracks the currently active section for navigation highlighting
 
     // ===========================
     // Utility Functions
@@ -52,19 +52,20 @@
     // ===========================
 
     /**
-     * Toggle mobile navigation menu
+     * Toggle mobile navigation menu - shows/hides mobile menu and updates UI state
      */
     function toggleMobileMenu() {
-        isMenuOpen = !isMenuOpen;
+        isMenuOpen = !isMenuOpen; // Toggle the menu state
 
+        // Update CSS classes to show/hide menu and animate hamburger icon
         navToggle.classList.toggle('active', isMenuOpen);
         navMenu.classList.toggle('active', isMenuOpen);
 
-        // Update ARIA attributes for accessibility
+        // Update ARIA attributes for accessibility (screen readers)
         navToggle.setAttribute('aria-expanded', isMenuOpen);
         navMenu.setAttribute('aria-hidden', !isMenuOpen);
 
-        // Prevent body scroll when menu is open
+        // Prevent body scroll when menu is open to improve UX on mobile
         document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     }
 
@@ -129,18 +130,22 @@
 
     /**
      * Scroll spy - update active nav link based on scroll position
+     * Uses reverse iteration to find the section currently in view
      */
     function updateActiveNavLink() {
         const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-        const scrollPosition = window.pageYOffset + navbar.offsetHeight + 100;
+        const scrollPosition = window.pageYOffset + navbar.offsetHeight + 100; // Account for navbar height + buffer
 
+        // Loop backwards through sections to find the one currently in view
+        // This ensures we get the section that's most recently scrolled into view
         for (let i = sections.length - 1; i >= 0; i--) {
             const section = document.getElementById(sections[i]);
             if (section && getOffsetTop(section) <= scrollPosition) {
+                // Only update if we're in a different section than before
                 if (currentSection !== sections[i]) {
                     setActiveNavLink(sections[i]);
                 }
-                break;
+                break; // Stop at the first section we find (since we're going backwards)
             }
         }
     }
@@ -150,23 +155,23 @@
     // ===========================
 
     /**
-     * Validate form field
+     * Validate form field - performs validation based on field type and requirements
      */
     function validateField(field) {
-        const value = field.value.trim();
+        const value = field.value.trim(); // Remove whitespace from beginning and end
         const fieldName = field.name;
         const errorElement = document.getElementById(`${fieldName}-error`);
 
         let isValid = true;
         let errorMessage = '';
 
-        // Required field validation
+        // Required field validation - check if field is empty
         if (field.hasAttribute('required') && !value) {
             isValid = false;
             errorMessage = `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required`;
         }
 
-        // Name validation
+        // Name validation - minimum length check
         if (fieldName === 'name' && value) {
             if (value.length < 2) {
                 isValid = false;
@@ -174,16 +179,16 @@
             }
         }
 
-        // Email validation
+        // Email validation - regex pattern matching for email format
         if (fieldName === 'email' && value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email validation pattern
             if (!emailRegex.test(value)) {
                 isValid = false;
                 errorMessage = 'Please enter a valid email address';
             }
         }
 
-        // Message validation
+        // Message validation - minimum length check
         if (fieldName === 'message' && value) {
             if (value.length < 5) {
                 isValid = false;
@@ -191,11 +196,11 @@
             }
         }
 
-        // Update field styling and error message
-        field.classList.toggle('error', !isValid);
+        // Update field styling and error message display
+        field.classList.toggle('error', !isValid); // Add/remove error class for styling
         if (errorElement) {
-            errorElement.textContent = errorMessage;
-            errorElement.setAttribute('aria-live', isValid ? 'off' : 'polite');
+            errorElement.textContent = errorMessage; // Display error message
+            errorElement.setAttribute('aria-live', isValid ? 'off' : 'polite'); // Screen reader support
         }
 
         return isValid;
@@ -356,12 +361,13 @@
     // ===========================
 
     /**
-     * Update greeting message based on time of day
+     * Update greeting message based on time of day - displays contextual welcome message
      */
     function updateGreetingMessage() {
-        const hour = new Date().getHours();
+        const hour = new Date().getHours(); // Get current hour (0-23)
         let greeting;
 
+        // Determine appropriate greeting based on time of day
         if (hour >= 5 && hour < 12) {
             greeting = "Good morning! ☀️ Thank you for visiting my portfolio.";
         } else if (hour >= 12 && hour < 17) {
@@ -372,6 +378,7 @@
             greeting = "Good night! 🌙 Thank you for visiting my portfolio.";
         }
 
+        // Update the greeting message in the footer if element exists
         if (greetingMessage) {
             greetingMessage.textContent = greeting;
         }
@@ -388,57 +395,63 @@
     }
 
     /**
-     * Add loading animation to skill icons
+     * Add loading animation to skill icons - fade in and slide up when visible
      */
     function initSkillAnimations() {
         const skillItems = document.querySelectorAll('.skill-item');
 
-        // Intersection Observer for skill animations
+        // Intersection Observer to trigger animations when elements come into view
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Animate in when element becomes visible
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1, // Trigger when 10% of element is visible
+            rootMargin: '0px 0px -50px 0px' // Trigger 50px before element enters viewport
         });
 
         skillItems.forEach((item, index) => {
-            // Initial state for animation
+            // Set initial state for animation (hidden and slightly below)
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
+            // Staggered animation delay based on index for wave effect
             item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
 
-            skillObserver.observe(item);
+            skillObserver.observe(item); // Start observing for intersection
         });
     }
 
     /**
-     * Add loading animation to project cards
+     * Add loading animation to project cards - fade in and slide up when visible
      */
     function initProjectAnimations() {
         const projectCards = document.querySelectorAll('.project-card');
 
+        // Intersection Observer to trigger animations when project cards come into view
         const projectObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Animate in when project card becomes visible
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.1 // Trigger when 10% of element is visible
         });
 
         projectCards.forEach((card, index) => {
+            // Set initial state for animation (hidden and slightly below)
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
+            // Longer staggered delay for project cards (0.2s between each)
             card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
 
-            projectObserver.observe(card);
+            projectObserver.observe(card); // Start observing for intersection
         });
     }
 
