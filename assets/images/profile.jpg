@@ -1,7 +1,0 @@
-<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="300" rx="150" fill="#5B8CFF"/>
-  <circle cx="150" cy="120" r="40" fill="#FFFFFF"/>
-  <path d="M150 170C170 170 180 160 180 140V130C180 120 170 110 150 110C130 110 120 120 120 130V140C120 160 130 170 150 170Z" fill="#FFFFFF"/>
-  <path d="M80 250C80 220 110 200 150 200C190 200 220 220 220 250V280H80V250Z" fill="#FFFFFF"/>
-  <text x="150" y="270" text-anchor="middle" fill="#5B8CFF" font-family="Arial, sans-serif" font-size="24" font-weight="bold">TL</text>
-</svg>

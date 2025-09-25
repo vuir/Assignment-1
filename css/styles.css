@@ -528,13 +528,6 @@ button {
   margin-bottom: var(--spacing-lg);
 }
 
-.project-arrow {
-  display: flex;
-  justify-content: flex-end;
-  color: var(--accent-blue);
-  transition: transform var(--transition-fast);
-}
-
 .project-card:hover .project-arrow {
   transform: translateX(5px);
 }
