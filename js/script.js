@@ -234,7 +234,7 @@
     /**
      * Handle form submission
      */
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
         e.preventDefault();
 
         // Validate all fields
@@ -257,22 +257,55 @@
             return;
         }
 
-        // If form is valid, show success message
+        // If form is valid, submit to Formspree
         if (isFormValid) {
-            showFormStatus('Thanks! (Demo only)', 'success');
+            try {
+                // Show loading state
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
 
-            // Reset form after successful submission
-            setTimeout(() => {
-                contactForm.reset();
-                // Clear any error states
-                formFields.forEach(field => {
-                    field.classList.remove('error');
-                    const errorElement = document.getElementById(`${field.name}-error`);
-                    if (errorElement) {
-                        errorElement.textContent = '';
+                // Prepare form data
+                const formData = new FormData(contactForm);
+
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
                     }
                 });
-            }, 1000);
+
+                if (response.ok) {
+                    showFormStatus('Thank you! Your message has been sent successfully.', 'success');
+
+                    // Reset form after successful submission
+                    setTimeout(() => {
+                        contactForm.reset();
+                        // Clear any error states
+                        formFields.forEach(field => {
+                            field.classList.remove('error');
+                            const errorElement = document.getElementById(`${field.name}-error`);
+                            if (errorElement) {
+                                errorElement.textContent = '';
+                            }
+                        });
+                    }, 1000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showFormStatus('Oops! There was a problem sending your message. Please try again.', 'error');
+            } finally {
+                // Reset button state
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         }
     }
 
