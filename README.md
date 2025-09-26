@@ -8,19 +8,14 @@ This portfolio website serves as a comprehensive digital resume, featuring:
 
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Interactive Navigation**: Smooth scrolling between sections with active link highlighting
-- **Skills Showcase**: Visual representation of technical skills including Java, Python, C, SQL, JavaScript, HTML, CSS, React, Git, GitHub, and Figma
-- **Project Portfolio**: Detailed showcase of academic and personal projects including AI models, tutoring platforms, and data analysis work
+- **Skills Showcase**: Visual representation of technical skills including Java, Python, C, etc.
+- **Project Portfolio**: Detailed showcase of academic and personal projects including AI model, etc.
 - **Contact Integration**: Functional contact form with Formspree integration for direct communication
 - **Modern UI/UX**: Clean, professional design with smooth animations and accessibility features
 
 ## Setup Instructions
-
-### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-  
-### Running the Website Locally
 
-#### Direct File Opening
 1. Clone or download the project files to your local machine
 2. Navigate to the project directory
 3. Open `index.html` directly in your web browser
