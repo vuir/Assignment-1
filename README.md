@@ -17,43 +17,13 @@ This portfolio website serves as a comprehensive digital resume, featuring:
 
 ### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, for better development experience)
-
+  
 ### Running the Website Locally
 
-#### Option 1: Direct File Opening
+#### Direct File Opening
 1. Clone or download the project files to your local machine
 2. Navigate to the project directory
 3. Open `index.html` directly in your web browser
-
-#### Option 2: Using a Local Web Server
-For the best development experience and to avoid any CORS issues:
-
-**Using Python (if installed):**
-```bash
-cd /path/to/project
-python -m http.server 8000
-```
-Then open `http://localhost:8000` in your browser
-
-**Using Node.js (if installed):**
-```bash
-cd /path/to/project
-npx serve .
-```
-Then open the provided localhost URL in your browser
-
-**Using PHP (if installed):**
-```bash
-cd /path/to/project
-php -S localhost:8000
-```
-Then open `http://localhost:8000` in your browser
-
-#### Option 3: Live Server (VS Code Extension)
-1. Install the "Live Server" extension in VS Code
-2. Right-click on `index.html` and select "Open with Live Server"
-3. The website will automatically open in your default browser
 
 ### File Structure
 ```
