@@ -1,6 +1,6 @@
 # Hayat Alghamdi - Computer Science Portfolio
 
-A modern, responsive practice portfolio website created as an assignment to demonstrate web development skills. This project showcases fundamental HTML, CSS, and JavaScript capabilities along with AI-assisted development techniques.
+Practice portfolio website created as an assignment to demonstrate web development skills. This project showcases fundamental HTML, CSS, and JavaScript capabilities along with AI-assisted development techniques.
 
 ## Project Description
 
